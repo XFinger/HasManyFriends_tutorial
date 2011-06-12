@@ -2,7 +2,7 @@ h2. Rails Has Many Friends Plugin Tutorial
 
 p. Add social networking to your site with the _Has Many Friends_ plugin. With this tutorial your site users can search for other users by email address and send a friend request. If the request is accepted, a friendship is established and the social networking commences. If the searched for site user is not yet a member, an email invitation can be sent out.
 
-p. This tutorial assumes that you already have a base project set up with a users table that has login (username) and email columns. If you are starting from scratch I suggest you take a look at the "Cortex Engine":https://github.com/XFinger/cortex_engine -- a base rails setup that includes user authentication with authlogic, action-mailers and a few other features to get you up and running. 
+p. This tutorial assumes that you already have a base project set up with a users table that has login and email columns. If you are starting from scratch I suggest you take a look at the "Cortex Engine":https://github.com/XFinger/cortex_engine -- a base rails setup that includes user authentication with authlogic, action-mailers and a few other features to get you up and running. 
 
 p. This tutorial uses a little bit of Ajax and requires that prototype is linked to in the head section of your layout. If you are using the Cortex Engine please see the JavaScript section of the readme.
 
