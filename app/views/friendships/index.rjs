@@ -1,0 +1,3 @@
+
+page.insert_html :bottom, :ajax_space, :partial => 'index'
+flash.discard  

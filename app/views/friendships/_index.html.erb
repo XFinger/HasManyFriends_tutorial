@@ -1,0 +1,15 @@
+<% if @result.blank? %>
+	A user with email: <b><%= @lookup %></b> was not found. <br>
+	<%= link_to_remote 'Email an invitation?', :url=> {:controller => 'friendships',:action =>'invitation', :email => @lookup}, :method => 'post'%>
+<br>
+<%else%>
+	User found: 
+	<%= @result.login.capitalize%>,   
+	<%= @result.email %>
+ 	<% if @friends.include? @result %>
+     	is already in your share list.  
+  	<%else%>  	
+		<br>
+		<%= link_to 'Send Share Request?', :controller => 'friendships', :action => 'new', :id => @result.id%>
+	<%end%>
+<%end%>

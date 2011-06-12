@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h4>Welcome, </h4>
+    <p>
+       <%= @user.login.capitalize %> ( <%= @user.email %> ) has invited you to join this web site. 
+    </p>
+    <p>
+      To sign up or for more information go to <%= @url %>.
+    </p>
+    <p>Thanks, <br>
+	 The Web
+	</p>
+  </body>
+</html>

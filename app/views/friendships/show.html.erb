@@ -1,0 +1,42 @@
+
+<h3>Manage Friends</h3> 
+<b>My Friends</b><br>
+	<%@friends.each do |fr| %>	
+		<%= fr.login.capitalize %>  
+		<%= link_to "Delete",  :controller => 'friendships', :action => 'sever', :id => fr.id    %> 	 
+	<%end%>
+<br><br>	
+	<% form_remote_tag  :url => '/friendships/index'  do  %>
+		Find friends by email address
+   		<%=  text_field_tag :search, params[:search], :size => 20  %>
+		<%= submit_tag "Search" %>
+	<% end %>
+	
+<div id = 'ajax_space'></div> <!-- provides a space for the Ajax response-->				
+<br>	
+ <% if @pending_for_me.size > 0 %>
+		<div>
+		 <b>Frindship Requests:</b>
+		  <ul>
+			<% @pending_for_me.each do |pfm|%>				
+					<li>
+			 			<%= pfm.login.capitalize %>, <%= pfm.email%> 
+						<%= link_to ' ...Accept', :controller => 'friendships', :action => 'accept', :id => pfm.id %> 
+			 		</li>					 				
+			<%end%>
+		</ul>
+	   </div>
+ <%end%>
+ 	
+ <% if @pending_by_me.size > 0 %>		 
+	   <div >
+		 <b>You have sent a friendship request to:</b>
+		 <ul>
+			<% @pending_by_me.each do |pbf|%>
+				<li><%= pbf.login.capitalize %>, <%= pbf.email%> </li>	
+			<%end%>
+		</ul>
+	   </div>
+ <%end%>		
+ 
+ 
